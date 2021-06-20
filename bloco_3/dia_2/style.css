@@ -1,0 +1,23 @@
+#titulo {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+
+}
+.mudacor {
+    background-color: burlywood;
+}
+#comidas {
+    font-weight: 600;
+    font-size: 3em;
+}
+body {
+    font-size: 16px;
+}
+
+#texto_legal {
+    font-style: italic;
+    line-height: 30px;
+    text-align: justify;
+    text-decoration: underline;
+}
