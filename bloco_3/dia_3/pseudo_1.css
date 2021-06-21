@@ -1,9 +1,15 @@
 h1, p {
     text-align: center;
 }
-li:hover {
+ul:hover {
+    background-color: cadetblue;
+}
+ol:hover {
     background-color: cadetblue;
 }
 li:active {
     font-family: fantasy, sans-serif;
+}
+li {
+    list-style: none;
 }
