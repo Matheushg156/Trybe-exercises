@@ -1,3 +1,21 @@
+body {
+    background-color: azure;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.header {
+    color: brown;
+    font-family: monospace;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+nav, aside, footer {
+    border-top: 1px solid blue;
+}
+
 .nav-links li {
     display: inline;
 }
