@@ -81,6 +81,21 @@ function maisRepete (numeros) {
 }
 console.log(maisRepete([5, 3, 7, 20, 11, 20, 12, 20, 14, 20, 15, 17, 15]));
 
+//Exercício 06 - Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
+
+function somatorioDeN (n) {
+  let somatorio = 0;
+  
+  for (let index = 1; index <= n; index += 1) {
+    somatorio = somatorio + index;
+  }
+  return somatorio;
+}
+
+console.log(somatorioDeN(5));
+
+
+
 
 
 
