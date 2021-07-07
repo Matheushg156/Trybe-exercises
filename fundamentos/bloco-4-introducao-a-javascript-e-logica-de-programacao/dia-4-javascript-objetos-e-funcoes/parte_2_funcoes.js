@@ -57,6 +57,30 @@ function maiorNome (nomes) {
 
 console.log(maiorNome(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
 
+//Exercício 05 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+
+function maisRepete (numeros) {
+  let contadorRepetidos = 0;
+  let contadorNumero = 0;
+  let indexRepetido = 0;
+
+  for (let index in numeros) {
+    let verificaNumero = numeros[index];
+    for (let index2 in numeros) {
+      if (verificaNumero === numeros[index2]) {
+        contadorNumero += 1;
+      }
+    }
+    if (contadorNumero > contadorRepetidos) {
+      contadorRepetidos = contadorNumero;
+      indexRepetido = index;
+    }
+    contadorNumero = 0;
+  }
+  return numeros[indexRepetido];
+}
+console.log(maisRepete([5, 3, 7, 20, 11, 20, 12, 20, 14, 20, 15, 17, 15]));
+
 
 
 
