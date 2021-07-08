@@ -48,7 +48,7 @@
         - document.getElementsByClassName()
         - document.getElementsByTagName()
         
-        3 - Crie uma função que mude a cor do quadrado vermelho para branco.
+        
         4 - Crie uma função que corrija o texto da tag <h1>.
         5- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
         6 - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
@@ -56,20 +56,30 @@
         
         //1 -Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
 
-        function textParagraph () {
+        function textParagraph() {
           let text = document.getElementById("meVejo");
           text.innerText = 'Numa empresa muito foda, fora desse país e recebendo em dolores';
         }
-        textParagraph ();
+        textParagraph();
 
         //2 -Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
 
-        function changeColorSquare () {
+        function changeColorSquare() {
           let color = document.getElementsByClassName("main-content")[0];
           
           color.style.background = "rgb(76,164,109)";
         }
-        changeColorSquare ();
+        changeColorSquare();
+
+        //3 - Crie uma função que mude a cor do quadrado vermelho para branco.
+
+        function changeColorSquareRed() {
+          let colorRed = document.getElementsByClassName("center-content")[0];
+
+          colorRed.style.background = "white";
+        }
+        changeColorSquareRed();
+        
 
     </script>
   </body>
