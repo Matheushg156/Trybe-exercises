@@ -43,15 +43,7 @@
     </main>
     <script>
         /*
-        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
-        - document.getElementById()
-        - document.getElementsByClassName()
-        - document.getElementsByTagName()
-        
-        
-        
-        5- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-        6 - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+            6 - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
         
         //1 -Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
@@ -85,11 +77,21 @@
         function correctTitle() {
           let title = document.getElementsByClassName("title")[0];
 
-          title.innerText = 'Exercício 5.1 - JavaScript';
+          title.innerHTML = 'Exercício 5.1 - JavaScript';
         }
         correctTitle();
 
+        //5- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+
+        function paragraphUpperCase() {
+          let paragraph = document.getElementsByTagName("p")[0];
+
+          paragraph.innerHTML = paragraph.innerHTML.toUpperCase();
+        }
+        paragraphUpperCase();
         
+
+                
     </script>
   </body>
 </html>
