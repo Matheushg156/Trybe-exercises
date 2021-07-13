@@ -90,3 +90,6 @@ const selectCenter = document.getElementsByClassName('center-content')[0];
 selectCenter.parentNode.style.backgroundColor = 'green';
 
 //6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+
+lista.lastChild.remove();
+lista.lastChild.remove();
