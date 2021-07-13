@@ -85,4 +85,8 @@ const selectRight = document.getElementsByClassName('right-content')[0];
 sectionRight.style.marginRight = 'auto';
 
 //5 - Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+
+const selectCenter = document.getElementsByClassName('center-content')[0];
+selectCenter.parentNode.style.backgroundColor = 'green';
+
 //6 - Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
