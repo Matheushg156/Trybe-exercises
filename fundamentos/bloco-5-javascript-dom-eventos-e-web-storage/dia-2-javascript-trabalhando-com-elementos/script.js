@@ -1,4 +1,3 @@
-//8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
 //9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
 
 //1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
@@ -43,3 +42,15 @@ const image = document.createElement('img');
 image.className = 'small-image';
 image.src = 'https://picsum.photos/200';
 sectionLeft.appendChild(image);
+
+//8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+
+const lista = document.createElement('ul');
+sectionRight.appendChild(lista);
+
+const numbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+for (let index = 0; index < numbers.length; index += 1) {
+  const elementosLista = document.createElement('li');
+  elementosLista.innerHTML = numbers[index];
+  lista.appendChild(elementosLista);
+}
