@@ -1,5 +1,3 @@
-//9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
-
 //1 - Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
 
 const titleH1 = document.createElement('h1');
@@ -53,4 +51,12 @@ for (let index = 0; index < numbers.length; index += 1) {
   const elementosLista = document.createElement('li');
   elementosLista.innerHTML = numbers[index];
   lista.appendChild(elementosLista);
+}
+
+//9 - Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+
+for (let index = 1; index <= 3; index += 1) {
+  const titleH3 = document.createElement('h3');
+  titleH3.innerHTML = 'Algum titulo ' + index;
+  tagMain.appendChild(titleH3);
 }
