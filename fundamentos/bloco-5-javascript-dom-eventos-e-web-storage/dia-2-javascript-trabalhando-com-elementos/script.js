@@ -1,5 +1,3 @@
-
-//5 - Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
 //6 - Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
 //7 - Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
 //8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
@@ -28,3 +26,9 @@ tagMain.appendChild(tagSection);
 const paragraph = document.createElement('p');
 paragraph.innerHTML = 'Muitos projetos para fazer e pouco tempo';
 tagSection.appendChild(paragraph);
+
+//5 - Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+
+const sectionLeft = document.createElement('section');
+sectionLeft.className = 'left-content';
+tagMain.appendChild(sectionLeft);
