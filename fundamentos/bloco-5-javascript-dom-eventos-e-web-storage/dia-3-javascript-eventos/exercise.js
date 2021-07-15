@@ -150,3 +150,16 @@ function addTask(task) {
 
 addTask('Estudar: Lógica.'); 
 
+// Exercício 08
+
+function colorTask(color) {
+  const getMyTasks = document.querySelector('.my-tasks');
+  const legend = document.createElement('div');
+
+  legend.className = 'task';
+  legend.style.backgroundColor = color;
+  getMyTasks.appendChild(legend);
+}
+
+colorTask('yellow');
+
