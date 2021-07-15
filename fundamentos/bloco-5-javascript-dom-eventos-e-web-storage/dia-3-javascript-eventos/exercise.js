@@ -79,3 +79,15 @@ function clickCollorButton() {
 };
 
 clickCollorButton();
+
+// Exercício 04
+
+function createButtonfriday(dayValue) {
+  const buttonContainer = document.querySelector('.buttons-container');
+  const buttonFriday = document.createElement('button');
+  buttonFriday.innerHTML = dayValue;
+  buttonFriday.id = 'btn-friday';
+  buttonContainer.appendChild(buttonFriday);
+}
+
+createButtonHoliday('Friday');
