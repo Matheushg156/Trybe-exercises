@@ -163,3 +163,19 @@ function colorTask(color) {
 
 colorTask('yellow');
 
+// Exercício 09
+
+function selectTask() {
+  const getLegend = document.getElementsByClassName('task selected');
+  const myLegend = document.querySelector('.task');
+
+  myLegend.addEventListener('click', function(event) {
+    if (getLegend.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+    }
+  });
+}
+
+selectTask();
