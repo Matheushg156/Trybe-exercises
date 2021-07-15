@@ -47,5 +47,14 @@ function createNumberDays() {
 
 createNumberDays();
 
+// Exercício 02
 
+function createButtonHoliday(value) {
+  const buttonContainer = document.querySelector('.buttons-container');
+  const newButton = document.createElement('button');
+  newButton.innerHTML = value;
+  newButton.id = 'btn-holiday';
+  buttonContainer.appendChild(newButton);
+}
 
+createButtonHoliday('Feriados');
