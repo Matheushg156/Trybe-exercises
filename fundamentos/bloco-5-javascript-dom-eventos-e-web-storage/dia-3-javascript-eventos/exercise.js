@@ -90,14 +90,14 @@ function createButtonfriday(dayValue) {
   buttonContainer.appendChild(buttonFriday);
 }
 
-createButtonHoliday('Friday');
+createButtonfriday('Friday');
 
 // Exercício 05
 
 function modifyTextButton() {
   const fridayButton = document.querySelector('#btn-friday');
   const getfridays = document.getElementsByClassName('friday');
-  const newText = 'Mufasa';
+  const newText = 'Mufasa it is friday';
 
   fridayButton.addEventListener('click', function() {
     for (let index = 0; index < getfridays.length; index += 1) {
@@ -116,7 +116,7 @@ modifyTextButton();
 // Exercício 06
 
 function dayMouseOver() {
-  let days = document.querySelector('#days');
+  const days = document.querySelector('#days');
 
   days.addEventListener('mouseover', function(event) {
     event.target.style.fontSize = '30px';
@@ -124,8 +124,10 @@ function dayMouseOver() {
   })
 };
 
+dayMouseOver();
+
 function dayMouseOut() {
-  let days = document.querySelector('#days');
+  const days = document.querySelector('#days');
 
   days.addEventListener('mouseout', function(event) {
     event.target.style.fontWeight = '200';
@@ -133,5 +135,18 @@ function dayMouseOut() {
   })
 };
 
-dayMouseOver();
+
 dayMouseOut();
+
+// Exercício 07
+
+function addTask(task) {
+  const getMyTasks = document.querySelector('.my-tasks');
+  const taskName = document.createElement('span');
+
+  taskName.innerHTML = task;
+  getMyTasks.appendChild(taskName);
+}
+
+addTask('Estudar: Lógica.'); 
+
