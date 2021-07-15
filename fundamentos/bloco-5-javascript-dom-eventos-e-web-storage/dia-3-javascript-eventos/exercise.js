@@ -91,3 +91,25 @@ function createButtonfriday(dayValue) {
 }
 
 createButtonHoliday('Friday');
+
+// Exercício 05
+
+function modifyTextButton() {
+  const fridayButton = document.querySelector('#btn-friday');
+  const getfridays = document.getElementsByClassName('friday');
+  const newText = 'Mufasa';
+
+  fridayButton.addEventListener('click', function() {
+    for (let index = 0; index < getfridays.length; index += 1) {
+      let originalText = parseInt(getfridays[index].previousElementSibling.innerText) + 1;
+      if (getfridays[index].innerHTML !== newText) {
+        getfridays[index].innerHTML = newText; 
+      } else {
+        getfridays[index].innerHTML = originalText;
+      }
+    }
+  })
+};
+
+modifyTextButton();
+
