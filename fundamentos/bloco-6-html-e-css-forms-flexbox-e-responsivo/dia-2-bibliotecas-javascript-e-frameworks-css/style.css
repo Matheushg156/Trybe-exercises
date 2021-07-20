@@ -1,3 +1,10 @@
 body {
   background-color: azure;
 }
+ main {
+   padding: 20px;
+ }
+
+ header {
+   padding: 20px;
+ }

@@ -10,41 +10,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="form-header">
-    <h1>Formulário para cadastro de currículo</h1>
+  <header>
+    <h1 class="display-4 text-muted">Formulário para cadastro de currículo</h1>
     <p>Preencha os campos abaixo.</p>
   </header>
   <main>
     <form>
       <div>
         <fieldset>
-          <div >
+          <div class="mb-3">
             <label for="name">Nome: </label>
-            <input type="text" name="name" id="name" maxlength="40" required>
+            <input class="form-control" type="text" name="name" id="name" maxlength="40" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="email">Endereço de e-mail: </label>
-            <input class="email-input" type="email" name="email" id="email" maxlength="50" required>
+            <input class="form-control" class="email-input" type="email" name="email" id="email" maxlength="50" required>
           </div>
-          <div>
+          <div class="mb-3"> 
             <label for="cpf-number">CPF: </label>
-            <input type="text" name="cpf" id="cpf-number" maxlength="11" required>
+            <input class="form-control" type="text" name="cpf" id="cpf-number" maxlength="11" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="address">Endereço: </label>
-            <input type="text" name="address" id="address" maxlength="200" required>
+            <input class="form-control" type="text" name="address" id="address" maxlength="200" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="city">Cidade: </label>
-            <input type="text" name="city" id="city" maxlength="200" required>
+            <input class="form-control" type="text" name="city" id="city" maxlength="200" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="state">Estado: </label>
-            <select name="state" id="state"  required>
+            <select class="form-control" name="state" id="state"  required>
               <option disabled selected value>Selecione seu estado</option>
             </select>
           </div>
-          <div>
+          <div class="mb-3 form-check">
             <label for="houseType">Tipo de imóvel: </label>
             <input type="radio" name="houseType" id="house" value="house" required> <span>Casa</span>
             <input type="radio" name="houseType" id="apartment" value="apartment" required>
@@ -52,25 +52,24 @@
           </div>
         </fieldset>
         <fieldset>
-          <div>
+          <div class="mb-3">
             <label for="resume">Resumo do currículo: </label>
-            <textarea id="resume" name="resume" maxlength="1000" cols="100" rows="20" required></textarea>
+            <textarea class="form-control" id="resume" name="resume" maxlength="1000" cols="100" rows="20" required></textarea>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="role">Cargo: </label>
-            <input type="text" name="role" id="role" maxlength="40" required>
+            <input class="form-control" type="text" name="role" id="role" maxlength="40" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="roleDescription">Descrição do cargo: </label>
-            <input type="text" id="roleDescription" name="roleDescription" required>
+            <input class="form-control" type="text" id="roleDescription" name="roleDescription" required>
           </div>
-          <div>
+          <div class="mb-3">
             <label for="startDate">Data de início: </label>
-            <input type="text" class="input-data" name="startDate" value="" required>
+            <input class="form-control" type="text" class="input-data" name="startDate" value="" required>
           </div>
         </fieldset>
-        <button class="submit-button" type="submit">Enviar</button>
-        <button class="clear-button" type="button">Limpar</button>
+        <button class="submit-button btn btn-success" type="submit">Enviar</button>
       </div>
     </form>
   </main>
