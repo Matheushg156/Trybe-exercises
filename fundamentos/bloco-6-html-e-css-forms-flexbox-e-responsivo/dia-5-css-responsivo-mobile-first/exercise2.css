@@ -67,3 +67,50 @@ p {
     text-align: center;
   }
 }
+
+@media (min-width: 1000px) {
+  body {
+    background-color: rgb(168, 230, 216);
+    font-family: monospace;
+    font-size: 16px;
+  }
+
+  #title {
+    text-align: center;
+    color: purple;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  p {
+    padding: 0 12px;
+    text-align: justify;
+    line-height: 1.9em;
+  }
+
+  .sub-titles {
+    margin-left: 10px;
+  }
+
+  #chapter {
+    text-align: center;
+  }
+
+  .nav {
+    width: 20%;
+  }
+
+  .nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav ul li {
+    text-decoration: none;
+    list-style: none;
+    color: slateblue;
+    font-size: 16px;
+  }
+}
