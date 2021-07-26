@@ -1,0 +1,38 @@
+/* html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+} */
+
+.container {
+  display: flex;
+}
+
+p {
+  padding: 10px;
+}
+
+@media (max-width: 360px) and (max-height: 640px) {
+  body {
+    background-color: gainsboro;
+    font-family: monospace;
+    font-size: 1.2em;
+  }
+
+  #title {
+    text-align: center;
+    font-size: 1.6em;
+    color: dodgerblue;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  p {
+    padding: 0 12px;
+    text-align: justify;
+    line-height: 1.5em;
+  }
+}
