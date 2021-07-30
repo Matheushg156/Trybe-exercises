@@ -1,3 +1,7 @@
+/* Parte I - Game Actions Simulator
+
+Nestes exercícios você irá implementar HOFs que simulam um turno de batalha em um jogo. Você irá criar funções que calculam dano, atualizam status, e ao final, retornam os resultados da rodada. */
+
 const mage = {
   healthPoints: 130,
   intelligence: 45,
@@ -50,3 +54,35 @@ const mageAttack = (mage) => {
   }
   return status;
 };
+
+/* Parte II
+
+Agora que você já possui a implementação das funções relativas aos três exercícios anteriores, passe-as como parâmetro para outras funções que irão compor um objeto gameActions . O objeto será composto por ações do jogo e cada ação é por denifição uma HOF , pois neste caso, são funções que recebem como parâmetro outra função. */
+
+const gameActions = {
+  warriorTurn: (warriorAttack) => {
+    const warriorDamage = warriorAttack(warrior);
+    warrior.damage = warriorDamage;
+    dragon.healthPoints -= warriorDamage;
+  },
+  mageTurn: (mageAttack) => {
+    const mageDamage = mageAttack(mage).damageDealt;
+    mage.damage = mageDamage;
+    mage.mana -= mageAttack(mage).manaSpent;
+    dragon.healthPoints -= mageDamage;
+  },
+  dragonTurn : (dragonAttack) => {
+    const dragonDamage = dragonAttack(dragon);
+    dragon.damage = dragonDamage;
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+  },
+  batleResult: () => {
+    gameActions.warriorTurn(warriorAttack);
+    gameActions.mageTurn(mageAttack);
+    gameActions.dragonTurn(dragonAttack);
+    return battleMembers;
+  },
+};
+
+console.log(gameActions.batleResult());
