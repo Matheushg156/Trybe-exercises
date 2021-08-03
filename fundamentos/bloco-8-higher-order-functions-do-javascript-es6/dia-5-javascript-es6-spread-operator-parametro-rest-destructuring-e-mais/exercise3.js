@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { log } = require('console');
 
 const alex = {
   name: 'Alex',
