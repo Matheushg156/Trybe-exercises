@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { join } = require('path/posix');
 
 const removeVowels = (word) => {
   const characters = word.split('');
