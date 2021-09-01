@@ -1,27 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
-import Image from './Image';
+import Order from './components/Order';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Image source={"https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg"} alternativeText="Cute cat staring" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    const headphone = {
+      id: 102,
+      user: "cena@gmail.com",
+      product: "Razer Headphone",
+      price: {
+        value: 99.99,
+        currency: "dollars"
+      }
+    };
+
+    const energyDrink = {
+      id: 77,
+      user: "cena@gmail.com",
+      product: "Monster 500mL",
+      price: {
+        value: 9.99,
+        currency: "dollars"
+      }
+    };
+
+    return (
+      <div className="App">
+        <h1> Orders recently created </h1>
+        <Order order={headphone} />
+        <Order order={energyDrink} />
+      </div>
+    );
+  }
 }
+
+//1 - O que o componente App é em relação a Order ?
+// Resposta = Pai.
 
 export default App;
