@@ -34,12 +34,23 @@ class App extends React.Component {
       }))
   }
 
+  changeButtonColor(number) {
+    return number % 2 === 0 ? 'green' : 'white';
+  }
+
   render() {
+    const { clickBtn1, clickBtn2, clickBtn3 } = this.state;
     return (
       <div>
-        <button onClick={ this.handleClick }>Botão 1 | Count = { this.state.clickBtn1 }</button>
-        <button onClick={ this.handleClick2 }>Botão 2 | Count = { this.state.clickBtn2 }</button>
-        <button onClick={ this.handleClick3 }>Botão 3 | Count = { this.state.clickBtn3 }</button>
+        <button onClick={ this.handleClick }
+        style={{ backgroundColor: this.changeButtonColor(clickBtn1) }}
+        >Botão 1 | Count = { this.state.clickBtn1 }</button>
+        <button onClick={ this.handleClick2 }
+        style={{ backgroundColor: this.changeButtonColor(clickBtn2) }}
+        >Botão 2 | Count = { this.state.clickBtn2 }</button>
+        <button onClick={ this.handleClick3 }
+        style={{ backgroundColor: this.changeButtonColor(clickBtn3) }}
+        >Botão 3 | Count = { this.state.clickBtn3 }</button>
       </div>
     );
   }
