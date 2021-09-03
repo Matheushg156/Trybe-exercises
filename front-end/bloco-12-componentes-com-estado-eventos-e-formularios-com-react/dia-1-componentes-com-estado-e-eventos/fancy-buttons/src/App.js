@@ -3,10 +3,17 @@ import './App.css';
 
 class App extends React.Component {
   constructor() {
-    super()
-    this.handleClick = this.handleClick.bind(this)
-    this.handleClick2 = this.handleClick2.bind(this)
-    this.handleClick3 = this.handleClick3.bind(this)
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
+
+    this.state = {
+      clickbtn1: 0,
+      clickbtn2: 0,
+      clickbtn3: 0,
+    };
   }
 
   handleClick() {
