@@ -19,19 +19,25 @@ class App extends React.Component {
   handleClick() {
     this.setState((prevState) => ({
       clickBtn1: prevState.clickBtn1 + 1,
-    }))
+    }), () => {
+      console.log(`Botão 1 ${this.changeButtonColor(this.state.clickBtn1)}`);
+    });
   }
 
     handleClick2() {
       this.setState((prevState) => ({
         clickBtn2: prevState.clickBtn2 + 1,
-      }))
+      }), () => {
+        console.log(`Botão 2 ${this.changeButtonColor(this.state.clickBtn2)}`);
+      });
   }
 
     handleClick3() {
       this.setState((prevState) => ({
         clickBtn3: prevState.clickBtn3 + 1,
-      }))
+      }), () => {
+        console.log(`Botão 3 ${this.changeButtonColor(this.state.clickBtn3)}`);
+      })
   }
 
   changeButtonColor(number) {
