@@ -17,15 +17,21 @@ class App extends React.Component {
   }
 
   handleClick() {
-    console.log('this do botão:', this);
+    this.setState(() => ({
+      clickbtn1: 1,
+    }))
   }
 
     handleClick2() {
-      console.log('this do botão 2:', this);
+      this.setState(() => ({
+        clickbtn2: 1,
+      }))
   }
 
     handleClick3() {
-      console.log('this do botão 3:', this);
+      this.setState(() => ({
+        clickbtn3: 1,
+      }))
   }
 
   render() {
