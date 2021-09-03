@@ -10,15 +10,15 @@ class App extends React.Component {
   }
 
   handleClick() {
-    console.log('Clicou no botão!');
+    console.log('this do botão:', this);
   }
 
     handleClick2() {
-      console.log('Xablau!');
+      console.log('this do botão 2:', this);
   }
 
     handleClick3() {
-      console.log('Xulambs!');
+      console.log('this do botão 3:', this);
   }
 
   render() {
