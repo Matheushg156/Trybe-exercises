@@ -11,6 +11,7 @@ class Form extends Component {
       email: '',
       age: '',
       aboutYou: '',
+      checkNerd: false,
     };
   }
 
@@ -23,7 +24,7 @@ class Form extends Component {
   }
 
   render() {
-    const { name, email, age, aboutYou } = this.state;
+    const { name, email, age, aboutYou, checkNerd } = this.state;
     return (
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
@@ -73,6 +74,17 @@ class Form extends Component {
               value={ aboutYou }
             />
           </label>
+
+          <label>
+            Curte animes, jogos e tecnologia?
+            <input
+              name="checkNerd"
+              type="checkbox"
+              checked={ checkNerd }
+              onChange={this.handleChange}
+            />
+          </label>
+
         </form>
       </div>
     )
