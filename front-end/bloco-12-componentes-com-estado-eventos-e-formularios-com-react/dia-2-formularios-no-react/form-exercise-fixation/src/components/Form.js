@@ -23,6 +23,7 @@ class Form extends Component {
   }
 
   render() {
+    const { name, email, age, aboutYou } = this.state;
     return (
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
@@ -34,7 +35,7 @@ class Form extends Component {
               name="name"
               type="text"
               onChange={this.handleChange}
-              value={ this.state.name }
+              value={ name }
             />
           </label>
 
@@ -44,6 +45,8 @@ class Form extends Component {
               id="email"
               name="email"
               type="email"
+              onChange={this.handleChange}
+              value={ email }
             />
           </label>
 
@@ -52,7 +55,8 @@ class Form extends Component {
             <select
               id="age"
               name="age"
-              defaultValue=""
+              onChange={this.handleChange}
+              value={ age }
             >
               <option value="">Selecione</option>
               <option value="adult">Maior que 18</option>
@@ -64,7 +68,9 @@ class Form extends Component {
             Fale sobre você:
             <textarea
               id="aboutYou"
-              nme="aboutYou"
+              name="aboutYou"
+              onChange={this.handleChange}
+              value={ aboutYou }
             />
           </label>
         </form>
