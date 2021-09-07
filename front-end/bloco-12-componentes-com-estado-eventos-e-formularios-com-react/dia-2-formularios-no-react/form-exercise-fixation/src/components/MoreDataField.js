@@ -15,9 +15,11 @@ class MoreDataField extends Component {
               onChange={ handleChange }
               value={ aboutYouValue }
             />
+            { !aboutYouValue.length ? ' -campo vazio- ' : ' -ok- '}
           </label>
 
           <label>
+          { !checkNerdChecked ? ' -selecione- ' : ' -ok- '}
             <input
               name="checkNerd"
               type="checkbox"
