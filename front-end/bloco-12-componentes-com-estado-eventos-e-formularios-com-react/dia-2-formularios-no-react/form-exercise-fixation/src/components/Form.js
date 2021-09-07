@@ -29,29 +29,32 @@ class Form extends Component {
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
         <form>
-          <label>
-            Nome:
-            <input
-              id="name"
-              name="name"
-              type="text"
-              onChange={this.handleChange}
-              value={ name }
-            />
-          </label>
+          <fieldset>
+            <legend>Informações Pessoais</legend>
+            
+            <label>
+              Nome:
+              <input
+                id="name"
+                name="name"
+                type="text"
+                onChange={this.handleChange}
+                value={ name }
+              />
+            </label>
 
-          <label>
-            Email:
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={this.handleChange}
-              value={ email }
-            />
-          </label>
+            <label>
+              Email:
+              <input
+                id="email"
+                name="email"
+                type="email"
+                onChange={this.handleChange}
+                value={ email }
+              />
+            </label>
 
-          <label>
+            <label>
             Idade:
             <select
               id="age"
@@ -65,32 +68,39 @@ class Form extends Component {
             </select>
           </label>
 
-          <label>
-            Fale sobre você:
-            <textarea
-              id="aboutYou"
-              name="aboutYou"
-              onChange={this.handleChange}
-              value={ aboutYou }
-            />
-          </label>
+          </fieldset>
 
-          <label>
-            <input
-              name="checkNerd"
-              type="checkbox"
-              checked={ checkNerd }
-              onChange={this.handleChange}
+          <fieldset>
+            <legend>Mais informações</legend>
+
+            <label>
+              Fale sobre você:
+              <textarea
+                id="aboutYou"
+                name="aboutYou"
+                onChange={this.handleChange}
+                value={ aboutYou }
               />
-              Curte animes, jogos e tecnologia?
-          </label>
+            </label>
 
-          <label>
-            Mande uma foto bacanuda!!!
-            <input
-              type="file"
-            />
-          </label>
+            <label>
+              <input
+                name="checkNerd"
+                type="checkbox"
+                checked={ checkNerd }
+                onChange={this.handleChange}
+                />
+                Curte animes, jogos e tecnologia?
+            </label>
+
+            <label>
+              Mande uma foto bacanuda!!!
+              <input
+                type="file"
+              />
+            </label>
+
+          </fieldset>
 
         </form>
       </div>
