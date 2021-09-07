@@ -14,7 +14,26 @@ class Form extends Component {
       age: '',
       aboutYou: '',
       checkNerd: false,
+      formularioComErros: true,
     };
+  }
+
+  handleError() {
+    const { name, email, age, aboutYou, checkNerd } = this.state;
+
+    const errorCases = [
+      !name.length,
+      !email.match(/^\S+@\S+$/i),
+      !age.length,
+      !aboutYou.length,
+      !checkNerd,
+    ];
+
+    const formularioPrenchido = errorCases.every((error) => error !== true);
+
+    this.setState({
+      formularioComErros: !formularioPrenchido,
+    });
   }
 
   handleChange({ target }) {
@@ -22,11 +41,11 @@ class Form extends Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
-    });
+    }, () => { this.handleError(); });
   }
 
   render() {
-    const { name, email, age, aboutYou, checkNerd } = this.state;
+    const { name, email, age, aboutYou, checkNerd, formularioComErros } = this.state;
     return (
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
@@ -44,6 +63,9 @@ class Form extends Component {
             handleChange={ this.handleChange }
           />
         </form>
+        { formularioComErros 
+        ? <span style={ { color: 'red' } }>Preencha todos os campos</span>
+      : <span style={ { color: 'green' } }>Todos campos foram preenchidos</span> }
       </div>
     )
   }
