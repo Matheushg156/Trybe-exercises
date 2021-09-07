@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import MoreDataField from './MoreDataField';
+import PersonalField from './PersonalField';
 
 class Form extends Component {
   constructor() {
@@ -29,79 +31,18 @@ class Form extends Component {
       <div>
         <h1>Estados e React - Tecnologia fantástica ou reagindo a regionalismos?</h1>
         <form>
-          <fieldset>
-            <legend>Informações Pessoais</legend>
-            
-            <label>
-              Nome:
-              <input
-                id="name"
-                name="name"
-                type="text"
-                onChange={this.handleChange}
-                value={ name }
-              />
-            </label>
+          <PersonalField
+            nameValue={ name }
+            emailValue={ email }
+            ageValue={ age }
+            handleChange={ this.handleChange }
+          />
 
-            <label>
-              Email:
-              <input
-                id="email"
-                name="email"
-                type="email"
-                onChange={this.handleChange}
-                value={ email }
-              />
-            </label>
-
-            <label>
-            Idade:
-            <select
-              id="age"
-              name="age"
-              onChange={this.handleChange}
-              value={ age }
-            >
-              <option value="">Selecione</option>
-              <option value="adult">Maior que 18</option>
-              <option value="underage">Menor que 18</option>
-            </select>
-          </label>
-
-          </fieldset>
-
-          <fieldset>
-            <legend>Mais informações</legend>
-
-            <label>
-              Fale sobre você:
-              <textarea
-                id="aboutYou"
-                name="aboutYou"
-                onChange={this.handleChange}
-                value={ aboutYou }
-              />
-            </label>
-
-            <label>
-              <input
-                name="checkNerd"
-                type="checkbox"
-                checked={ checkNerd }
-                onChange={this.handleChange}
-                />
-                Curte animes, jogos e tecnologia?
-            </label>
-
-            <label>
-              Mande uma foto bacanuda!!!
-              <input
-                type="file"
-              />
-            </label>
-
-          </fieldset>
-
+          <MoreDataField
+            aboutYouValue={ aboutYou }
+            checkNerdChecked={ checkNerd }
+            handleChange={ this.handleChange }
+          />
         </form>
       </div>
     )
