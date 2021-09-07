@@ -76,12 +76,19 @@ class Form extends Component {
           </label>
 
           <label>
-            Curte animes, jogos e tecnologia?
             <input
               name="checkNerd"
               type="checkbox"
               checked={ checkNerd }
               onChange={this.handleChange}
+              />
+              Curte animes, jogos e tecnologia?
+          </label>
+
+          <label>
+            Mande uma foto bacanuda!!!
+            <input
+              type="file"
             />
           </label>
 
