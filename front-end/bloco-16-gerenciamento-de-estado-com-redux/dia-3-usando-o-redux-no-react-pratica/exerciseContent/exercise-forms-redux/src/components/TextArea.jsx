@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 class TextArea extends Component {
   render() {
-    const { id, labelText, name, value, handleChange } = this.props;
+    const { id, labelText, name, value, handleChange, maxLength } = this.props;
     return (
       <label htmlFor={ id }>
         { labelText }
         <textarea
           id={ id }
           name={ name }
+          maxLength={ maxLength }
           value={ value }
           onChange={ handleChange }
         />
@@ -24,6 +25,7 @@ TextArea.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  maxLength: PropTypes.string.isRequired,
 };
 
 export default TextArea;

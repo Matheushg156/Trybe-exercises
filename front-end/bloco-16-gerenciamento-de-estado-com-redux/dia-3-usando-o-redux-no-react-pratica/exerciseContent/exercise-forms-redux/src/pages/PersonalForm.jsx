@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { setPersonalValue } from '../redux/actions/actions';
 import Input from '../components/Input';
 import Select from '../components/Select';
 
@@ -26,12 +29,21 @@ class PersonalForm extends Component {
   }
 
   handleClick() {
-    const { history } = this.props;
+    const { history, dispatchSetValue } = this.props;
+    // Disparamos a nossa action através da função importada
+    // de actions.js, que apelidamos de dispatchSetValue
+    dispatchSetValue(this.state);
     history.push('/professionalForm');
   }
 
   render() {
     const { name, email, cpf, address, city, states } = this.state;
+    const statesArray = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará',
+      'Distrito Federal', 'Espirito Santo', 'Goiás', 'Maranhão',
+      'Mato Grosso do Sul', 'Mato Grosso', 'Minas Gerais', 'Pará',
+      'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro',
+      'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima',
+      'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
     return (
       <form>
         <fieldset>
@@ -77,6 +89,8 @@ class PersonalForm extends Component {
             name="states"
             value={ states }
             handleChange={ this.handleChange }
+            defaultOption="Selecione"
+            options={ statesArray }
           />
           <button
             type="button"
@@ -91,9 +105,23 @@ class PersonalForm extends Component {
 }
 
 PersonalForm.propTypes = {
+  dispatchSetValue: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-export default PersonalForm;
+const mapDispatchToProps = (dispatch) => ({
+  // dispatchSetValue é um "apelido" para executarmos a nossa action creator
+  // Nossa action creator é a função importada do arquivo actions
+  // ou seja, setPersonalValue,
+  // que vai receber um parâmetro
+  // esse parâmetro é o estado do nosso componente
+  // aqui estamos apenas avisando que vai existir um parâmetro
+  // mas o estado do componente é passado no momento da execução
+  // nesse caso, dentro da função onSubmitForm
+  dispatchSetValue: (valueAndName) => dispatch(setPersonalValue(valueAndName)),
+}
+);
+
+export default connect(null, mapDispatchToProps)(PersonalForm);

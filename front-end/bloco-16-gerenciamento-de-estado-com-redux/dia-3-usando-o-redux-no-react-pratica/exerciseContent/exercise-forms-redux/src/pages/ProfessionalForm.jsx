@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import { setProfessionalValue } from '../redux/actions/actions';
 import TextArea from '../components/TextArea';
 import Input from '../components/Input';
 
@@ -23,7 +26,8 @@ class ProfessionalForm extends Component {
   }
 
   handleClick() {
-    const { history } = this.props;
+    const { history, dispatchSetValue } = this.props;
+    dispatchSetValue(this.state);
     history.push('/formDisplay');
   }
 
@@ -37,6 +41,7 @@ class ProfessionalForm extends Component {
             labelText="Resumo do currículo:"
             id="inputResume"
             name="resume"
+            maxLength="1000"
             value={ resume }
             handleChange={ this.handleChange }
           />
@@ -51,6 +56,7 @@ class ProfessionalForm extends Component {
             labelText="Descrição do cargo:"
             id="inputJobDescription"
             name="jobDescription"
+            maxLength="500"
             value={ jobDescription }
             handleChange={ this.handleChange }
           />
@@ -66,10 +72,15 @@ class ProfessionalForm extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  dispatchSetValue: (valueAndName) => dispatch(setProfessionalValue(valueAndName)),
+});
+
 ProfessionalForm.propTypes = {
+  dispatchSetValue: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-export default ProfessionalForm;
+export default connect(null, mapDispatchToProps)(ProfessionalForm);

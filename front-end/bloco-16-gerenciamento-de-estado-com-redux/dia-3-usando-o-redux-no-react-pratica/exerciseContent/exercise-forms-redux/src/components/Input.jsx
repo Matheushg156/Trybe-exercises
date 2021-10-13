@@ -20,11 +20,19 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  id: PropTypes.string,
+  labelText: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string,
+  handleChange: PropTypes.func,
+};
+
+Input.defaultProps = {
+  labelText: '',
+  value: '',
+  name: '',
+  id: '',
+  handleChange: null,
 };
 
 export default Input;

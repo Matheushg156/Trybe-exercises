@@ -1,14 +1,33 @@
-const INITIAL_STATE = {
-  state: '',
+import { SET_PROFESSIONAL_VALUE, SET_PERSONAL_VALUE } from '../actions/actions';
+
+const initialState = {
+  personalInputs: {
+    name: '',
+    email: '',
+    cpf: '',
+    address: '',
+    city: '',
+    states: '',
+  },
+  professionalInputs: {
+    resume: '',
+    job: '',
+    jobDescription: '',
+  },
 };
 
-function myReducer(state = INITIAL_STATE, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-  case 'NEW_ACTION':
-    return { state: action.state };
+  // Caso o tipo da action seja SET_PERSONAL_VALUE,
+  // retorne o que já existe no estado e atualize
+  // o personalInputs com a informação trazida pela action case.
+  case SET_PERSONAL_VALUE:
+    return { ...state, personalInputs: action.payload };
+  case SET_PROFESSIONAL_VALUE:
+    return { ...state, professionalInputs: action.payload };
   default:
     return state;
   }
-}
+};
 
-export default myReducer;
+export default reducer;
